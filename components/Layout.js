@@ -6,6 +6,7 @@ export const Layout = (props) => {
   	<div>
   		<Head>
   			<title>BitzPrice</title>
+  			<link rel="shortcut icon" href="/static/favicon.ico"/>
   			<link rel="stylesheet"
   				href="https://bootswatch.com/4/cerulean/bootstrap.min.css"/>
   		</Head>
