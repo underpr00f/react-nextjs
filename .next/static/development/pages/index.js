@@ -15,7 +15,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "./node_modules/next-server/dist/lib/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Navbar */ "./components/Navbar.js");
+/* harmony import */ var react_yandex_metrika__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-yandex-metrika */ "./node_modules/react-yandex-metrika/lib/index.js");
+/* harmony import */ var react_yandex_metrika__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_yandex_metrika__WEBPACK_IMPORTED_MODULE_3__);
 var _jsxFileName = "/home/underproof/Projects/react-nextjs/components/Layout.js";
+
 
 
 
@@ -23,27 +26,37 @@ var Layout = function Layout(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 8
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 9
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 10
     },
     __self: this
-  }, "BitzPrice"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+  }, "BitzPrice"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_yandex_metrika__WEBPACK_IMPORTED_MODULE_3__["YMInitializer"], {
+    accounts: [53773633],
+    options: {
+      webvisor: true
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
     rel: "shortcut icon",
     href: "/static/favicon.ico",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 12
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
@@ -51,20 +64,20 @@ var Layout = function Layout(props) {
     href: "https://bootswatch.com/4/cerulean/bootstrap.min.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 13
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Navbar__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 17
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 18
     },
     __self: this
   }, props.children));
@@ -9342,6 +9355,310 @@ exports.isSuspense = isSuspense;
 if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/react-is/cjs/react-is.development.js");
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/react-yandex-metrika/lib/component.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-yandex-metrika/lib/component.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* eslint-env browser */
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.YMInitializer = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
+
+var _init = _interopRequireDefault(__webpack_require__(/*! ./init */ "./node_modules/react-yandex-metrika/lib/init.js"));
+
+var _constants = __webpack_require__(/*! ./constants */ "./node_modules/react-yandex-metrika/lib/constants.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var YMInitializer =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(YMInitializer, _Component);
+
+  function YMInitializer() {
+    _classCallCheck(this, YMInitializer);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(YMInitializer).apply(this, arguments));
+  }
+
+  _createClass(YMInitializer, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      (0, _init.default)(this.props.accounts, this.props.options, this.props.version);
+      var el = document.createElement('script');
+      var attrs = this.props.attrs;
+      el.type = 'text/javascript';
+      el.async = true;
+      el.src = (0, _constants.scriptPath)(this.props.version);
+      Object.keys(attrs).map(function (i) {
+        if (el.__proto__.hasOwnProperty(i)) {
+          el.setAttribute(i, attrs[i]);
+        }
+      });
+      this.insertPoint.insertBefore(el, null);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      var setInsertPoint = function setInsertPoint(element) {
+        _this.insertPoint = element;
+      };
+
+      return _react.default.createElement(this.props.containerElement, {
+        ref: setInsertPoint
+      }, this.props.children);
+    }
+  }]);
+
+  return YMInitializer;
+}(_react.Component);
+
+exports.YMInitializer = YMInitializer;
+YMInitializer.displayName = 'YMInitializer';
+YMInitializer.propTypes = {
+  accounts: _propTypes.default.arrayOf(_propTypes.default.number).isRequired,
+  containerElement: _propTypes.default.string,
+  options: _propTypes.default.object,
+  attrs: _propTypes.default.object,
+  version: _propTypes.default.oneOf(['1', '2'])
+};
+YMInitializer.defaultProps = {
+  containerElement: 'div',
+  options: {},
+  attrs: {},
+  version: '1'
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-yandex-metrika/lib/constants.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-yandex-metrika/lib/constants.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.callbackQueueName = callbackQueueName;
+exports.scriptPath = scriptPath;
+exports.trackerConstructorName = trackerConstructorName;
+exports.trackerInstanceName = trackerInstanceName;
+exports.trackerVersionName = trackerVersionName;
+exports.accountListName = void 0;
+
+/* eslint-disable curly */
+var accountListName = 'yandex_metrika_accounts';
+exports.accountListName = accountListName;
+
+function invalidVersion() {
+  throw new Error('invalid Ya.Metrika version');
+}
+
+function callbackQueueName(version) {
+  if (version === '1') return 'yandex_metrika_callbacks';
+  if (version === '2') return 'yandex_metrika_callbacks2';
+  invalidVersion();
+}
+
+function scriptPath(version) {
+  if (version === '1') return 'https://mc.yandex.ru/metrika/watch.js';
+  if (version === '2') return 'https://mc.yandex.ru/metrika/tag.js';
+  invalidVersion();
+}
+
+function trackerConstructorName(version) {
+  if (version === '1') return 'Metrika';
+  if (version === '2') return 'Metrika2';
+  invalidVersion();
+}
+
+function trackerInstanceName(id) {
+  return "yaCounter".concat(id);
+}
+
+function trackerVersionName(id) {
+  return "yaCounterVersion".concat(id);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/react-yandex-metrika/lib/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/react-yandex-metrika/lib/index.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* eslint-env browser */
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.withId = withId;
+exports.withFilter = withFilter;
+Object.defineProperty(exports, "YMInitializer", {
+  enumerable: true,
+  get: function get() {
+    return _component.YMInitializer;
+  }
+});
+exports.default = void 0;
+
+var _constants = __webpack_require__(/*! ./constants */ "./node_modules/react-yandex-metrika/lib/constants.js");
+
+var _component = __webpack_require__(/*! ./component */ "./node_modules/react-yandex-metrika/lib/component.js");
+
+function ymProxy(id, methodName) {
+  try {
+    var _window$trackerInstan;
+
+    for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+      args[_key - 2] = arguments[_key];
+    }
+
+    (_window$trackerInstan = window[(0, _constants.trackerInstanceName)(id)])[methodName].apply(_window$trackerInstan, args);
+  } catch (ex) {
+    console.warn(ex);
+  }
+}
+
+function accountIdList() {
+  return typeof window !== 'undefined' ? window[_constants.accountListName] : [];
+}
+
+function ymAsyncProxy(ids) {
+  return function () {
+    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    ids.forEach(function (id) {
+      var trackerVersion = window[(0, _constants.trackerVersionName)(id)];
+      var callbackQueue = window[(0, _constants.callbackQueueName)(trackerVersion)];
+
+      if (callbackQueue) {
+        callbackQueue.push(function () {
+          return ymProxy.apply(void 0, [id].concat(args));
+        });
+      } else {
+        ymProxy.apply(void 0, [id].concat(args));
+      }
+    });
+  };
+}
+
+function ym() {
+  return ymAsyncProxy(accountIdList()).apply(void 0, arguments);
+}
+
+function withId(counterId) {
+  return withFilter(function (id) {
+    return counterId === id;
+  });
+}
+
+function withFilter(f) {
+  return ymAsyncProxy(accountIdList().filter(f));
+}
+
+var _default = ym;
+exports.default = _default;
+
+
+/***/ }),
+
+/***/ "./node_modules/react-yandex-metrika/lib/init.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-yandex-metrika/lib/init.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = init;
+
+var _constants = __webpack_require__(/*! ./constants */ "./node_modules/react-yandex-metrika/lib/constants.js");
+
+/* eslint-env browser */
+
+/* global Ya */
+function init(accounts) {
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var version = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '1';
+  var callbackQueue = (0, _constants.callbackQueueName)(version);
+  window[_constants.accountListName] = window[_constants.accountListName] || [];
+  window[_constants.accountListName] = window[_constants.accountListName].concat(accounts);
+  window[callbackQueue] = window[callbackQueue] || [];
+  window[callbackQueue].push(function () {
+    accounts.forEach(function (id) {
+      var defaultOptions = {
+        id: id
+      };
+
+      try {
+        window[(0, _constants.trackerInstanceName)(id)] = new Ya[(0, _constants.trackerConstructorName)(version)](Object.assign(defaultOptions, options));
+      } catch (ex) {
+        console.warn(ex);
+      }
+    });
+  });
+  accounts.forEach(function (id) {
+    window[(0, _constants.trackerVersionName)(id)] = version;
+  });
+}
+
+;
 
 
 /***/ }),
