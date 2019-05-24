@@ -10,11 +10,7 @@ export const Layout = (props) => {
   			<link rel="shortcut icon" href="/static/favicon.ico"/>
   			<link rel="stylesheet"
   				href="https://bootswatch.com/4/cerulean/bootstrap.min.css"/>
-
-
-  		</Head>
-  		<Navbar />
-  		<div className="container">
+  			<meta name="yandex-verification" content="2caec29c5a9588c9" />
 	  		<YMInitializer
 	            accounts={[53773633]}
 	            version="2"
@@ -25,6 +21,10 @@ export const Layout = (props) => {
 	              webvisor: true
 	            }}
 	          />
+  		</Head>
+  		<Navbar />
+  		<div className="container">
+
   			{props.children}
   		</div>
   	</div>
