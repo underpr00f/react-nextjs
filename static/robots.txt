@@ -1,4 +1,4 @@
-Sitemap: https://underproof-react-nextjs.netlify.com/static/sitemap.xml
+Sitemap: https://underproof-react-nextjs.netlify.com/sitemap.xml
 
 User-agent: *
 Allow: /

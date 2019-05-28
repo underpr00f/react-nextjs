@@ -2,11 +2,13 @@ import { useState } from "react";
 export const Prices = ({bpi}) => {
   const [state, setState] = useState({currency: 'USD'})
   return (
-    <div>
+    <div itemScope itemType="http://schema.org/Product">
       <ul className="list-group">
-        <li className="list-group-item">Bitcoin rate for {bpi[state.currency].description} : 
-        <span className="badge badge-primary">{bpi[state.currency].code}</span> 
-        <strong>{bpi[state.currency].rate}</strong>
+        <li className="list-group-item"><span itemProp="name">Bitcoin rate</span> for {bpi[state.currency].description} : 
+        <div itemProp="offers" itemScope itemType="http://schema.org/Offer">
+          <span className="badge badge-primary" itemProp="priceCurrency">{bpi[state.currency].code}</span> 
+          <strong itemProp="price">{bpi[state.currency].rate}</strong>
+        </div>
       </li>
       </ul>
       <br/>
