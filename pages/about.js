@@ -1,11 +1,12 @@
 import { Layout } from '../components/Layout'
 
 const About = () => {
+  const title = "About to Next.js"
   return (
-  	
-	<Layout>
+	  	
+	<Layout title={title}>
 		<div>
-	  		<h1>About to Next.js!</h1>
+	  		<h1>{title}</h1>
 	  		<p>
 	  			About to Next.js!
 		    </p>

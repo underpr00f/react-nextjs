@@ -2,13 +2,14 @@ import Fetch from 'isomorphic-unfetch'
 import { Layout } from '../components/Layout'
 import { Prices } from '../components/Prices'
 const Home = ({bpi}) => {
+  const title = "Welcome to Next.js"
   return (
-  	
-	<Layout>
-		<div>
-	  		<h1>Welcome to Next.js!</h1>
-			<p>Check current Bitcoin rate</p>
-			<Prices bpi={bpi} />
+      
+    <Layout title={title}>
+		  <div>
+  	  	<h1>{title}</h1>
+  			<p>Check current Bitcoin rate</p>
+  			<Prices bpi={bpi} />
     	</div>
     </Layout>
 

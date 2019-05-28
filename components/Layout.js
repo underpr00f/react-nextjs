@@ -2,15 +2,16 @@ import Head from 'next/head'
 import { Navbar } from './Navbar'
 import { YMInitializer } from 'react-yandex-metrika';
 
-export const Layout = (props) => {
+export const Layout = ({title, children}) => {
   return (
   	<div>
   		<Head>
-  			<title>BitzPrice</title>
+  			<title>{title}</title>
   			<link rel="shortcut icon" href="/static/favicon.ico"/>
   			<link rel="stylesheet"
   				href="https://bootswatch.com/4/cerulean/bootstrap.min.css"/>
   			<meta name="yandex-verification" content="2caec29c5a9588c9" />
+        <meta name="description" content="Course bitcoin, example SSR site, react nextjs" />
 	  		<YMInitializer
 	            accounts={[53773633]}
 	            version="2"
@@ -25,7 +26,7 @@ export const Layout = (props) => {
   		<Navbar />
   		<div className="container">
 
-  			{props.children}
+  			{children}
   		</div>
   	</div>
   )
