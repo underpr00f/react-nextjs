@@ -4,7 +4,9 @@ export const Prices = ({bpi}) => {
   return (
     <div itemScope itemType="http://schema.org/Product">
       <ul className="list-group">
-        <li className="list-group-item"><span itemProp="name">Bitcoin rate</span> for {bpi[state.currency].description} : 
+        <li className="list-group-item">
+          <span itemProp="name">Bitcoin rate</span>
+          <span itemProp="description"> for {bpi[state.currency].description}</span> : 
         <div itemProp="offers" itemScope itemType="http://schema.org/Offer">
           <span className="badge badge-primary" itemProp="priceCurrency">{bpi[state.currency].code}</span> 
           <strong itemProp="price">{bpi[state.currency].rate}</strong>
