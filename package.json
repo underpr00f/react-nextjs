@@ -19,7 +19,6 @@
     "next-compose-plugins": "^2.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-yandex-metrika": "^2.5.1",
     "recursive-copy": "^2.0.10"
   }
 }
