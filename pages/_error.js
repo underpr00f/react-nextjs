@@ -1,8 +1,8 @@
 import React from 'react'
 
 class Error extends React.Component {
-  static getInitialProps({ res, err }) {
-    const statusCode = res ? res.statusCode : err ? err.statusCode : null
+  static getInitialProps({ res, err, errCode }) {
+    const statusCode = res ? res.statusCode : err ? err.statusCode : errCode ? errCode : null
     return { statusCode }
   }
 
