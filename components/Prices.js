@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 export const Prices = ({bpi}) => {
   const [state, setState] = useState({currency: 'USD'})
   return (
