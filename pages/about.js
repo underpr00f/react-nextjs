@@ -1,12 +1,17 @@
 import { Layout } from '../components/Layout'
 
-const About = ({absoluteUrl}) => {
+const About = ({protocol, host, pathname}) => {
   const title = "About to Next.js"
   const description = "About to Next.js description"
 
   return (
 	  	
-	<Layout title={title} description={description} url={absoluteUrl}>
+	<Layout 
+	  title={title} 
+	  description={description} 
+	  protocol={protocol}
+      host={host}
+      pathname={pathname}>
 		<div>
 	  		<h1>{title}</h1>
 	  		<p>{description}</p>
@@ -26,10 +31,10 @@ About.getInitialProps = async ({ req }) => {
     protocol = 'http:'
   }
 
-  let absoluteUrl = protocol+"//"+host+pathname
-
   return {
-    absoluteUrl: absoluteUrl,
+    host: host,
+    protocol: protocol,
+    pathname: pathname
   };
 }
 

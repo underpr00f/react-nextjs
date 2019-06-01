@@ -1,13 +1,19 @@
 import Fetch from 'isomorphic-unfetch'
 import { Layout } from '../components/Layout'
 import { Prices } from '../components/Prices'
-const Home = ({absoluteUrl, bpi}) => {
+const Home = ({protocol, host, pathname, bpi}) => {
   const title = "Welcome to Next.js"
   const description = "Check current Bitcoin rate"
 
   return (
       
-    <Layout title={title} description={description} url={absoluteUrl}>
+    <Layout 
+      title={title} 
+      description={description} 
+      protocol={protocol}
+      host={host}
+      pathname={pathname}
+      >
 		  <div>
   	  	<h1>{title}</h1>
   			<p>{description}</p>
@@ -24,16 +30,18 @@ Home.getInitialProps = async ({ req }) => {
   let host = req ? 
     req.headers && req.headers.host      
     : window.location.hostname
-  if (host==="localhost") {
+  
+  if (host && host.indexOf('localhost') > -1) {
     protocol = 'http:'
-  }    
-  let absoluteUrl = protocol+"//"+host+pathname
+  }   
 
   const res = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
   const data = await res.json();
   return {
     bpi: data.bpi,
-    absoluteUrl: absoluteUrl,
+    host: host,
+    protocol: protocol,
+    pathname: pathname
   };
 }
 export default Home

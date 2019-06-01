@@ -6,7 +6,11 @@ const defaultDescription = "Course bitcoin, example SSR site, react nextjs"
 const defaultOGURL = "https://underproof-react-nextjs.netlify.com"
 const defaultTitle = "Welcome to Next.js"
 
-export const Layout = ({title, url, description, children}) => {
+export const Layout = ({title, protocol, host, pathname, description, children}) => {
+
+  let absoluteUrl = defaultOGURL+pathname
+  absoluteUrl = host && protocol+"//"+host+pathname
+
   return (
   	<div>
   		<Head>
@@ -16,10 +20,10 @@ export const Layout = ({title, url, description, children}) => {
   				href="https://bootswatch.com/4/cerulean/bootstrap.min.css"/>
   			<meta name="yandex-verification" content="2caec29c5a9588c9" />
         <meta name="description" content={description || defaultDescription} />
-        <meta name="keywords" content="курс, биткоин, Россия, дизайн, элитный, дизайнер, проект, стоимость, цена, некст, nextjs, реакт, reactjs" />
+        <meta name="keywords" content="курс, биткоин, Россия, дизайн, проект, стоимость, цена, некст, nextjs, реакт, reactjs" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={url || defaultOGURL} />
+        <meta property="og:url" content={absoluteUrl || defaultOGURL} />
         <meta property="og:title" content={title || defaultTitle} />
         <meta name="og:description" content={description || defaultDescription} />
         <YandexMetrika />
