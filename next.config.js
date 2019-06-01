@@ -2,8 +2,12 @@ const { join } = require('path');
 const recursiveCopy = require('recursive-copy');
 
 const withPlugins = require("next-compose-plugins");
+const withSass = require('@zeit/next-sass');
 
-module.exports = withPlugins( [], 
+module.exports = withPlugins( 
+  [
+    withSass
+  ], 
   {
     exportPathMap: async function(
       defaultPathMap,
