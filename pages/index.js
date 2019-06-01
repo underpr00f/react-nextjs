@@ -3,9 +3,8 @@ import { Layout } from '../components/Layout'
 import { Prices } from '../components/Prices'
 const Home = ({absoluteUrl, bpi}) => {
   const title = "Welcome to Next.js"
-  // const url = ""
   const description = "Check current Bitcoin rate"
-  console.log("host", absoluteUrl)
+
   return (
       
     <Layout title={title} description={description} url={absoluteUrl}>
@@ -20,15 +19,16 @@ const Home = ({absoluteUrl, bpi}) => {
 }
 Home.getInitialProps = async ({ req }) => {
   let protocol = 'https:'
-  let host = req ? req.headers.host : window.location.hostname
   let pathname = ""
 
-  if (host.indexOf('localhost') > -1) {
+  let host = req ? 
+    req.headers && req.headers.host      
+    : window.location.hostname
+  if (host==="localhost") {
     protocol = 'http:'
-  }
-
+  }    
   let absoluteUrl = protocol+"//"+host+pathname
-  
+
   const res = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
   const data = await res.json();
   return {
