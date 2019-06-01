@@ -8,8 +8,7 @@ const defaultTitle = "Welcome to Next.js"
 
 export const Layout = ({title, protocol, host, pathname, description, children}) => {
 
-  let absoluteUrl = defaultOGURL+pathname
-  absoluteUrl = host && protocol+"//"+host+pathname
+  let absoluteUrl = host ? protocol+"//"+host+pathname : defaultOGURL+pathname
 
   return (
   	<div>
