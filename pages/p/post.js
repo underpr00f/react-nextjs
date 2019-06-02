@@ -12,7 +12,7 @@ const Post = withRouter(({protocol, host, pathname, show, router}) => {
         description={description} 
         protocol={protocol}
         host={host}
-        pathname={pathname}>
+        pathname={router.asPath}>
       <h1>{show.name}</h1>
       <p>{show && show.summary && show.summary.replace(/<[/]?p>/g, '') || show.message}</p>
       <img src={show && show.image && show.image.medium} />
