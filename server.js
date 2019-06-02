@@ -11,7 +11,7 @@ app
     const server = express();
 
     server.get('/p/:id', (req, res) => {
-      const actualPage = '/p/learn-nextjs';
+      const actualPage = '/p/post';
       const queryParams = { title: req.params.id };
       app.render(req, res, actualPage, queryParams);
     });

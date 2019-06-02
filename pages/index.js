@@ -9,7 +9,7 @@ import Link from 'next/link'
 
 const PostLink = ({id, linktitle}) => (
   <li>
-    <Link as={`/p/${id}`} href={`/post?title=${linktitle}`}>
+    <Link as={`/p/${id}`} href={`/posts?title=${linktitle}`}>
       <a>{linktitle}</a>
     </Link>
   </li>
@@ -34,8 +34,9 @@ const Home = withRouter(({protocol, host, pathname, bpi, router}) => {
 		  <div>
   	  	<h1>{title}</h1>
   			<p>{description}</p>
+        <PostLink id="posts" linktitle="Learn Next.js is awesome" />
+
   			<Prices bpi={bpi} />
-        <PostLink id="learn-nextjs" linktitle="Learn Next.js is awesome" />
     	</div>
     </Layout>
 

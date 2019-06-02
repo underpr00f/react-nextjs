@@ -3,8 +3,8 @@ import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 import { PathUtil } from '../utils/PathUtil'
 
-const Post = ({protocol, host, pathname, shows}) => {
-  const title = "Welcome to Batman"
+const Posts = ({protocol, host, pathname, shows}) => {
+  const title = "Batman TV Shows"
   const description = "Check Batman films"
   return (      
     <Layout
@@ -13,7 +13,7 @@ const Post = ({protocol, host, pathname, shows}) => {
         protocol={protocol}
         host={host}
         pathname={pathname}>
-      <h1>Batman TV Shows</h1>
+      <h1>{title}</h1>
       <ul>
         {shows.map(show => (
           <li key={show.id}>
@@ -27,7 +27,7 @@ const Post = ({protocol, host, pathname, shows}) => {
   )
 };
 
-Post.getInitialProps = async function({req, pathname}) {
+Posts.getInitialProps = async function({req, pathname}) {
   const pathValues = PathUtil(req, pathname)
   const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
   const data = await res.json();
@@ -38,4 +38,4 @@ Post.getInitialProps = async function({req, pathname}) {
   };
 };
 
-export default Post;
+export default Posts;
