@@ -1,6 +1,7 @@
 import { Layout } from '../components/Layout.js';
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
+import { PathUtil } from '../utils/PathUtil'
 
 const Post = ({protocol, host, pathname, shows}) => {
   const title = "Welcome to Batman"
@@ -26,23 +27,13 @@ const Post = ({protocol, host, pathname, shows}) => {
   )
 };
 
-Post.getInitialProps = async function({req}) {
-  let protocol = 'https:'
-  let pathname = ""
-
-  let host = req ? 
-    req.headers && req.headers.host      
-    : window.location.hostname
-  
-  if (host && host.indexOf('localhost') > -1) {
-    protocol = 'http:'
-  }  
+Post.getInitialProps = async function({req, pathname}) {
+  const pathValues = PathUtil(req, pathname)
   const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
   const data = await res.json();
 
-  console.log(`Show data fetched. Count: ${data.length}`);
-
   return {
+    ...pathValues,
     shows: data.map(entry => entry.show)
   };
 };

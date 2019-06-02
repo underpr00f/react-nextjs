@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import { withRouter } from 'next/router';
 
 const PostElement = withRouter(({protocol, host, pathname, show, router}) => {
-  // console.log(show)
+  // console.log(protocol, host, pathname, show)
   const title = "Welcome to Batman"
   const description = "Check Batman films"
   return (
@@ -20,19 +20,18 @@ const PostElement = withRouter(({protocol, host, pathname, show, router}) => {
   )
 });
 
-PostElement.getInitialProps = async function(context) {
-  console.log(context)
-  // let protocol = 'https:'
-  // let pathname = ""
+PostElement.getInitialProps = async function({req, query}) {
+  let protocol = 'https:'
+  let pathname = ""
 
-  // let host = req ? 
-  //   req.headers && req.headers.host      
-  //   : window.location.hostname
+  let host = req ? 
+    req.headers && req.headers.host      
+    : window.location.hostname
   
-  // if (host && host.indexOf('localhost') > -1) {
-  //   protocol = 'http:'
-  // }   
-  const { id } = context.query;
+  if (host && host.indexOf('localhost') > -1) {
+    protocol = 'http:'
+  }   
+  const { id } = query;
   const res = await fetch(`https://api.tvmaze.com/shows/${id}`);
   const show = await res.json();
 
@@ -41,9 +40,9 @@ PostElement.getInitialProps = async function(context) {
   return {
     // errorCode: errorCode,
     show: show,
-    // host: host,
-    // protocol: protocol,
-    // pathname: pathname
+    host: host,
+    protocol: protocol,
+    pathname: pathname
   } 
 };
 

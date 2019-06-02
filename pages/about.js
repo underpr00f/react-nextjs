@@ -1,4 +1,5 @@
 import { Layout } from '../components/Layout'
+import { PathUtil } from '../utils/PathUtil'
 
 const About = ({protocol, host, pathname}) => {
   const title = "About to Next.js"
@@ -20,21 +21,12 @@ const About = ({protocol, host, pathname}) => {
 
   )
 }
-About.getInitialProps = async ({ req }) => {
-  let protocol = 'https:'
-  let host = req ? 
-  	req.headers && req.headers.host  	   
-  	: window.location.hostname
-  let pathname = "/about"
+About.getInitialProps = async ({ req, pathname }) => {
 
-  if (host && host.indexOf('localhost') > -1) {
-    protocol = 'http:'
-  }
+  const pathValues = PathUtil(req, pathname)
 
   return {
-    host: host,
-    protocol: protocol,
-    pathname: pathname
+    ...pathValues
   };
 }
 

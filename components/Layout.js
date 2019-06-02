@@ -9,7 +9,6 @@ const environment = process.env.NODE_ENV
 
 
 export const Layout = ({title, protocol, host, pathname, description, children}) => {
-
   let absoluteUrl = host ? protocol+"//"+host+pathname : defaultOGURL+pathname
   
   let faviconPath = "/favicon.png"

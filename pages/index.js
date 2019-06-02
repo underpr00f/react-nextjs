@@ -2,6 +2,7 @@ import fetch from 'isomorphic-unfetch'
 import { Layout } from '../components/Layout'
 import { Prices } from '../components/Prices'
 import Error from 'next/error'
+import { PathUtil } from '../utils/PathUtil'
 
 import { withRouter } from 'next/router';
 import Link from 'next/link'
@@ -17,7 +18,6 @@ const PostLink = ({id, linktitle}) => (
 const Home = withRouter(({protocol, host, pathname, bpi, router}) => {
   const title = "Welcome to Next.js"
   const description = "Check current Bitcoin rate"
-
   // if (errorCode) {
   //   console.log(errorCode)
   //   return <Error errCode={errorCode} />
@@ -41,28 +41,16 @@ const Home = withRouter(({protocol, host, pathname, bpi, router}) => {
 
   )
 });
-Home.getInitialProps = async ({ req }) => {
-  let protocol = 'https:'
-  let pathname = ""
-
-  let host = req ? 
-    req.headers && req.headers.host      
-    : window.location.hostname
-  
-  if (host && host.indexOf('localhost') > -1) {
-    protocol = 'http:'
-  }   
+Home.getInitialProps = async ({ req, pathname }) => {
+  const pathValues = PathUtil(req, pathname)
 
   const res = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
   // const errorCode = res.statusCode > 200 ? res.statusCode : false
   const data = await res.json();
 
   return {
-    // errorCode: errorCode,
+    ...pathValues,
     bpi: data.bpi,
-    host: host,
-    protocol: protocol,
-    pathname: pathname
   } 
    
 
