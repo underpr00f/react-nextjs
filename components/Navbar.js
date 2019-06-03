@@ -11,13 +11,13 @@ export const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarColor01">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <Link href="/"><a>Home<span className="sr-only">(current)</span></a></Link>
+            <Link href="/" passHref><a>Home<span className="sr-only">(current)</span></a></Link>
           </li>
           <li className="nav-item">
-            <Link href="/about"><a>About</a></Link>
+            <Link href="/about" passHref><a>About</a></Link>
           </li>
           <li className="nav-item">
-            <Link href="/posts"><a>Post</a></Link>
+            <Link href="/posts" passHref><a>Post</a></Link>
           </li>
         </ul>
 
