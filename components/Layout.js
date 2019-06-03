@@ -24,7 +24,7 @@ export const Layout = ({title, protocol, host, pathname, description, children})
   			<link rel="stylesheet"
   				href="https://bootswatch.com/4/cerulean/bootstrap.min.css"/>
   			<meta name="yandex-verification" content="2caec29c5a9588c9" />
-        <meta name="description" content={description || defaultDescription} />
+        <meta name="description" content={description} />
         <meta name="keywords" 
           content="netlify, underproof, курс, биткоин, Россия, дизайн, проект, стоимость, цена, некст, nextjs, реакт, reactjs" />
 
