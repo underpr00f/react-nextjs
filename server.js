@@ -9,6 +9,9 @@ app
   .prepare()
   .then(() => {
     const server = express();
+    server.get('/', (req, res) => app.render(req, res, '/'))
+    server.get('/about', (req, res) => app.render(req, res, '/about'))
+    server.get('/posts', (req, res) => app.render(req, res, '/posts'))
 
     server.get('/posts/:id', (req, res) => {
       const actualPage = '/p/post';
