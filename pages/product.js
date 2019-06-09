@@ -1,10 +1,14 @@
-const Product = ({slug}) => {   
-  return <h1>The product page {slug}</h1>
+const Product = ({headers, params}) => {
+  console.log(headers.referer, params)   
+  return <h1>The product page</h1>
 }
 
-Product.getInitialProps = async function({req, query, pathname}) {
+Product.getInitialProps = async function({req}) {
+  const { params, headers } = req
+
   return {
-    slug: query.slug
+  	headers: headers,
+  	params: params,
   };
 };
 
