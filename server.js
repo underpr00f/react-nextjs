@@ -16,7 +16,7 @@ app
     server.get('/posts/:id', (req, res) => {
       const actualPage = '/p/post';
       const queryParams = { title: req.params.id };
-      app.render(req, res, actualPage, queryParams);
+      app.render(req, res, actualPage, queryParams);      
     });
 
     server.get('*', (req, res) => {
