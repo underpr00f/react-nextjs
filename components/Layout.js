@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Navbar } from './Navbar'
 import { YandexMetrika } from '../utils/YandexMetrika'
-import { GoogleTag } from '../utils/GoogleTag'
+import { GoogleAnalitics } from '../utils/GoogleTag'
 
 import { STATIC_URL } from '../constants/urls'
 
@@ -34,7 +34,7 @@ export const Layout = ({title, protocol, host, pathname, description, children})
         {environment !== "development" ?
           <> 
             <YandexMetrika /> 
-            <GoogleTag />
+            <GoogleAnalitics />
           </>
         : null}
   		</Head>
