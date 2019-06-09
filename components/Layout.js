@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import { Navbar } from './Navbar'
 import { YandexMetrika } from '../utils/YandexMetrika'
+import { GoogleTag } from '../utils/GoogleTag'
+
 import { STATIC_URL } from '../constants/urls'
 
 const defaultDescription = "Course bitcoin, example SSR site, react nextjs"
@@ -29,7 +31,12 @@ export const Layout = ({title, protocol, host, pathname, description, children})
         <meta property="og:url" content={absoluteUrl || defaultOGURL} />
         <meta property="og:title" content={title || defaultTitle} />
         <meta name="og:description" content={description || defaultDescription} />
-        {environment !== "development" ? <YandexMetrika /> : null}
+        {environment !== "development" ?
+          <> 
+            <YandexMetrika /> 
+            <GoogleTag />
+          </>
+        : null}
   		</Head>
       <header className="header">
   		  <Navbar />
