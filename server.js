@@ -19,6 +19,10 @@ app
       app.render(req, res, actualPage, queryParams);      
     });
 
+    server.get("/products/:slug", (req, res) => {
+      return app.render(req, res, "/product", { slug: req.params.slug })
+    });
+
     server.get('*', (req, res) => {
       return handle(req, res);
     });
