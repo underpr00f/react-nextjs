@@ -17,10 +17,7 @@ export const Layout = ({title, protocol, host, pathname, description, children})
   let absoluteUrl = host ? protocol+"//"+host+pathname : defaultOGURL+pathname
   useEffect(() => {
     if (environment !== "development") {
-      window.ym(53773633, 'hit', pathname);  
-      console.log(pathname)    
-    } else {
-      console.log(window.location)
+      window.ym(51751819, 'hit', pathname);      
     }
   }, []);
    
