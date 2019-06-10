@@ -20,6 +20,6 @@ module.exports = withPlugins(
       await recursiveCopy(join(dir, 'static/'), outDir, {dot:true});
       return defaultPathMap;
     },
-    target: 'serverless',
+    // target: 'serverless',
   }
 );
