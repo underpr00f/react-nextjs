@@ -17,7 +17,7 @@ const Posts = ({protocol, host, pathname, shows}) => {
       <ul>
         {shows.map(show => (
           <li key={show.id}>
-            <Link href={`/posts/post?title=${show.id}`} as={`/posts/${show.id}`} >
+            <Link href={`/posts/post?title=${show.id}`} as={`/posts/post/${show.id}`} >
               <a>{show.name}</a>
             </Link>
           </li>

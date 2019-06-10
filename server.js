@@ -17,7 +17,7 @@ app
     server.get('/about', (req, res) => app.render(req, res, '/about'))
     server.get('/posts', (req, res) => app.render(req, res, '/posts'))
 
-    server.get('/posts/:title', (req, res) => {
+    server.get('/posts/post/:title', (req, res) => {
       const actualPage = '/posts/post';
       const queryParams = { title: req.params.title };
       app.render(req, res, actualPage, queryParams);      
@@ -38,14 +38,15 @@ app
     //   //   return app.render(req, res, '/product', { slug: req.headers.referer.substring(req.headers.referer.lastIndexOf('/') + 1) })
     //   // } 
     // })
-    server.get('/products/:slug', async (req, res) => {
-      await app.render(req, res, '/product', { 
-        slug: req.params.slug,
-        protocol: req.protocol,
-        host: req.get('host'),
-        originalUrl: req.originalUrl,
-      });
-    });
+    // server.get('/products/:slug', async (req, res) => {
+    //   await app.render(req, res, '/product', { 
+    //     slug: req.params.slug,
+    //     protocol: req.protocol,
+    //     host: req.get('host'),
+    //     originalUrl: req.originalUrl,
+    //   });
+    // });
+
     server.get('*', (req, res) => {
       return handle(req, res);
     });

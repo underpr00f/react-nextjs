@@ -1,0 +1,11 @@
+{
+    "version": 2,
+    "name": "underproof-next",
+    "builds": [
+        { "src": "next.config.js", "use": "@now/next" }
+    ],
+    "routes": [
+        { "src": "/posts/post/(?<title>[^/]+)$", "dest": "/posts/post?title=$title" },
+        { "src": "/product/(?<slug>[^/]+)$", "dest": "/product?slug=$slug" }
+    ]
+}

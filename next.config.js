@@ -19,6 +19,7 @@ module.exports = withPlugins(
       // await copyFile(join(dir, 'robots.txt'), join(outDir, 'robots.txt'));
       await recursiveCopy(join(dir, 'static/'), outDir, {dot:true});
       return defaultPathMap;
-    }
+    },
+    target: 'serverless',
   }
 );
