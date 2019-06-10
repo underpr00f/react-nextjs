@@ -1,14 +1,30 @@
-const Product = ({headers, params}) => {
-  console.log(headers.referer, params)   
-  return <h1>The product page</h1>
+import { Layout } from '../components/Layout'
+
+const Product = ({host, protocol, slug}) => {
+  const title = "The product page"
+  const description = "About to Next.js description"
+  const pathname = '/'+slug
+ 
+  return (
+	<Layout 
+	  title={title} 
+	  description={description} 
+	  protocol={protocol}
+      host={host}
+      pathname={pathname}>
+  		<h1>{title} {slug}</h1>
+  	</Layout>
+  )
 }
 
-Product.getInitialProps = async function({req}) {
-  const { params, headers } = req
+Product.getInitialProps = async function({query}) {
+  const {slug, protocol, host} = query;	
 
   return {
-  	headers: headers,
-  	params: params,
+  	// req: req,
+  	slug: slug,
+  	protocol: protocol,
+  	host: host,
   };
 };
 
