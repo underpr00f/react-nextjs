@@ -19,7 +19,7 @@ app
 
     server.get('/posts/post/:title', (req, res) => {
       const actualPage = '/posts/post';
-      const queryParams = { title: req.params.title.replace('/', '') };
+      const queryParams = { title: req.params.title };
       app.render(req, res, actualPage, queryParams);      
     });
 

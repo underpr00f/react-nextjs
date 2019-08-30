@@ -1,7 +1,7 @@
-import { Layout } from '../../components/Layout'
+import { Layout } from '../../../components/Layout'
 import fetch from 'isomorphic-unfetch';
 import { withRouter } from 'next/router';
-import { PathUtil } from '../../utils/PathUtil'
+import { PathUtil } from '../../../utils/PathUtil'
 
 const Post = withRouter(({protocol, host, pathname, show, router}) => {
   const title = show.name || "404 Undefined"
