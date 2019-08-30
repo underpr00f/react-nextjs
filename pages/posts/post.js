@@ -21,13 +21,13 @@ const Post = withRouter(({protocol, host, pathname, show, router}) => {
 });
 
 Post.getInitialProps = async function({req, query, pathname}) {
-  console.log(pathname)
+  
   const pathValues = PathUtil(req, pathname)
   const { title } = query;
   if (typeof window === "undefined") {
-    console.log("on server")
+    console.log("on server", title)
   } else {
-    console.log("on client")
+    console.log("on client", title)
   }
   const res = await fetch(`https://api.tvmaze.com/shows/${title}`);
   const show = await res.json();

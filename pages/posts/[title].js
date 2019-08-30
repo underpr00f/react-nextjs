@@ -1,7 +1,7 @@
-import { Layout } from '../../../components/Layout'
+import { Layout } from '../../components/Layout'
 import fetch from 'isomorphic-unfetch';
 import { withRouter } from 'next/router';
-import { PathUtil } from '../../../utils/PathUtil'
+import { PathUtil } from '../../utils/PathUtil'
 
 const Post = withRouter(({protocol, host, pathname, show, router}) => {
   const title = show.name || "404 Undefined"
@@ -21,11 +21,11 @@ const Post = withRouter(({protocol, host, pathname, show, router}) => {
 });
 
 Post.getInitialProps = async function({req, query, pathname}) {
-
+  
   const pathValues = PathUtil(req, pathname)
   const { title } = query;
   if (typeof window === "undefined") {
-    console.log("on server")
+    console.log("on server", title)
   } else {
     console.log("on client")
   }
