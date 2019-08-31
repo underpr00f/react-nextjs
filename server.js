@@ -20,7 +20,7 @@ app
     server.get('/posts/post/:title', (req, res) => {
       const actualPage = '/posts/post';
       const queryParams = { title: req.params.title };
-      app.render(req, res, actualPage, queryParams);      
+      return app.render(req, res, actualPage, queryParams);      
     });
 
     // server.get("/products/:slug", (req, res) => {
