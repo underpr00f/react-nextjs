@@ -6,6 +6,7 @@ import { PathUtil } from '../utils/PathUtil'
 const Posts = ({protocol, host, pathname, shows}) => {
   const title = "Batman TV Shows"
   const description = "Check Batman films"
+  console.log(shows);
   return (      
     <Layout
         title={title} 
