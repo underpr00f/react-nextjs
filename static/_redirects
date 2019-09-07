@@ -1,1 +1,1 @@
-/posts/post title=:title  /posts/post/:title  301
+/posts/post/:title  /posts/post title=:title  301
